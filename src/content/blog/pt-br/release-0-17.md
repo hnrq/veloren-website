@@ -1,0 +1,45 @@
+---
+title: "Veloren 0.17 Release"
+guid: "https://veloren.net/blog/release-0-17/"
+url: "https://veloren.net/blog/release-0-17/"
+pubDate: "2024-12-25T00:00:00.000Z"
+---
+
+0.17 Release
+------------
+
+Veloren is finally releasing 0.17! It has been 9 months since 0.16 was released so there has been a lot of work put into this version.
+
+If you're reading this before **18:00 GMT on December 28th**, make sure to join the release party. On the side, you can also watch the [release party dev stream](https://www.youtube.com/watch?v=kgK58NuBrXc), where we'll be chatting with devs about what went into this version.
+
+To join, you can download the game for free at [veloren.net](https://veloren.net/download) and [create an account](https://veloren.net/account), then launch the game and hop on the default server. See you there!
+
+### New in this release
+
+Here are some of the changes in this release:
+
+*   Hammer skill tree rework.
+*   Recipe system.
+*   New enemies: Hydra, Karkatha, Cactids, Goblins and Legooms.
+*   Dungeon reworks completed: Cultist, Myrmidon, Sahagin.
+*   New worldgen structures: Terracotta, Dwarven Mines and Vampire Castle dungeons; farm plots, more airship docks, glider courses.
+*   Plugins can now define NPCs.
+*   Airshipper will now display the player counts on the server browser.
+*   Switched audio framework to Kira.
+*   Many balance improvements.
+
+### Changelog
+
+As always, there are always more changes than we can add to a single post! You can check out the full changelog [here](https://gitlab.com/veloren/veloren/-/blob/master/CHANGELOG.md#0170-2024-12-28).
+
+Thanks to this versions contributors (in random order):
+
+> HEIEnthusiast, Hrom, Benoît du Garreau, Christof Petig, Tomodachi94, uniior, floppy, daniel, walpo, Uniior, xmac, NeuralModder, Skygrango, Sam, Vaga, Isse, Matthew Searle, crab, Kira Lu, ryan necti, fnetX, Thibagon, Gemu, DungeonLord, Jungso, Treeco, James Melkonian, DaforLynx, crab, Dmitry Kashitsyn, Imbris, coffee-compiler, Necti, zesterer, Aidar Shaikhiev, LunarEclipse, Tarhun, Hgrebnednav, do-no-van, Papinha, miocore, Thomas S, ArDu, horblegorble, Janez, Sylv and fotkurz.
+
+Thanks as well to all the weblate contributors who contributed to this release (in random order):
+
+> fnetX, nwildner, Kretka, walpo, zerocraft, Janez, Blesk, polauf, Positron832, Karaya, GGTheTranslator, bov, Jungso, Tibo-Mouss, NeoSlugman, ArDu, LS-Localicows, ttanesque, perospirone, nokoe, coffee-compiler, metamuffin, CodeVlogs, hurzelchen, Enlive, 2b33rs, fvasco, Zughy, kanym, l3nemy, Zerothas, sungbinma, kurtinge, loglizzy, Thiagod86, dyegomb, PurpleDev, FelipePardim, arthuradolfo, rmorettibr, RyanOrigins, evgenkot, lucius\_pilgrim, masta0f1eave, emberman, MaxSoniX, Furrior, Daxik2x, Paw, Sovenok-Hacker, LagerJack, NeonLife, Alerty, Alderador, spartan195, crab, jecasadiego, guillermytho, vilmasvensson, StartaBafras, Sinari, Akumo33 and Witch.
+
+### Support the project
+
+As always, feel free to support the project on Open Collective. It allows us to keep our servers running, and launch great release parties like the one for this release!

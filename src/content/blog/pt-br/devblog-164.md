@@ -1,0 +1,34 @@
+---
+title: "This Week In Veloren 164"
+guid: "https://veloren.net/blog/devblog-164/"
+url: "https://veloren.net/blog/devblog-164/"
+pubDate: "2022-03-21T00:00:00.000Z"
+---
+
+This week, we see some work being done on modular weapons and hear about Veloren's talk at Rust in Arts.
+
+\- AngelOnFira, TWiV Editor
+
+## Contributor Work
+
+Thanks to this week's contributors, @XVar, @xMAC94x, @holychowders, @AndrzejDrabarek, @Christof, @imbris, @James, @Mehmet-dev, @Mel!
+
+@batvin123 got crafty, and put the Linux, Windows, and MacOS versions of the launcher for Veloren on a cd-r. Now they can play the game like they were back in the early 2000s or 90s!
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/597826574095613962/953694691768037446/IMG_20220315_205631.png)
+
+### Modular weapon tooltips by @ubruntu
+
+I worked on tooltips for modular weapon components. Not all the models are in yet and the numbers need balancing, but now they display new stats. Also, the item-kind text (e.g. 'Fire staff Component' in this example) is dynamically generated and i18n friendly.
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/597826574095613962/955178634904231976/sfc.png)
+
+### RustFest 2021
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/539518074106413056/959070502448660480/maxresdefault.png)
+
+Back in November of 2021, Veloren spoke at Rust in Arts with a "Director's Commentary" of the game. The talk was just released on YouTube, and you can [watch it here](https://rustfest.global/session/53-directors-commentary-veloren/)
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/634860358623821835/954870205128003584/2022-03-20_00-22-11.jpg)
+
+_A golden sunrise. See you next week!_

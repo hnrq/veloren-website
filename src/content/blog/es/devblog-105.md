@@ -1,0 +1,46 @@
+---
+title: "This Week In Veloren 105"
+guid: "https://veloren.net/blog/devblog-105/"
+url: "https://veloren.net/blog/devblog-105/"
+pubDate: "2021-02-01T00:00:00.000Z"
+---
+
+This week we hear about the progress of an attack rework by @Sam. @Christof describes the progress on travelling merchants. @Dumbeldor describes recent changes to Torvus.
+
+\- AngelOnFira, TWiV Editor
+
+## Contributor Work
+
+Thanks to this week's contributors, @Sam, @Blob, @zesterer, @James, @imbris, @DaForLynx, @xMAC94x, @Slipped, and @Entropy!
+
+@Redo started working on changing some sound effects. @Gemu has been preparing a bunch of models for one-handed weapons. @Rotsuoy is reworking the medium quadruped animations and tweaking the models so that there will soon be prettier grazing animals with smoother animations. @Snowram worked on adding more lights to dungeons.
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/597826574095613962/805829076295090236/screenshot_1611874891305.png)
+
+_Lights in dungeons by @Snowram_
+
+@James is working on some basic interactions with NPCs. @Entropy has been working on organizing the asset folder. @Capucho is trying to replace shaderc with naga on the wgpu branch. @zesterer added snow!
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/539518074106413056/807224849637703700/snow.gif)
+
+_Snow!_
+
+### Torvus update by @Dumbeldor
+
+I'm a new contributor, and this week I added some metrics to Torvus to fix sending messages from Discord to the Veloren server. You can check out the [merge request here](https://gitlab.com/veloren/torvus/-/merge_requests/21). If everything goes well the bot will work and it will be possible to send messages to Veloren from Discord (and vice versa) without any problem, and we will have a lot of nice metrics at our disposal to monitor that.
+
+### Travelling Merchants by @Christof
+
+This week, I got the inter-site trade planning finally right. Now (still invisible) merchants leave their town for a neighboring town. With wares to sell and a plan of goods to buy, of hopefully still matching total value at the destination market. Merchants are rated for both the actual wares they should bring as for additional wares, which currently exceed their transport capacity. The next step is to fully implement the trade at the destination. There was also a worldsim meeting where we planned the implementation of behaviour trees, group AI and moving agent code to the server.
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/523568428905398283/805527697362911262/screenshot_1612120593872.png)
+
+### Attack Rework by @Sam
+
+Recently, I completely reworked how attacks functioned and how they are handled. Before, attacks that were applied via melee, projectiles, explosions, shockwaves, or beams handled applying the effects from an attack independently. There was also a lot of boilerplate in how things were handled as code had to be replicated in all 5 locations. This also meant adding or updating particular effects were troublesome as it had to be done in 5 separate locations.
+
+Now, each of those 5 systems has an `Attack` struct attached to it. What happens now is that each of the 5 systems is only involved in determining if an attack hits. If it does a function takes that `Attack` struct and creates a list of events that are handled by the server. While making this change, I also added support for each attack having variable critical chance and critical multiplier. Many other various effects (such as buffs, energy rewards, knockback, life steal, and more as needed) can also be tacked onto an attack much easier, and with more freedom in what values are used.
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/634860358623821835/805876096079757333/unknown.png)
+
+_A wandering vagrant off exploring. See you next week!_

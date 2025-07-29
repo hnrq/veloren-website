@@ -1,0 +1,58 @@
+---
+title: "This Week In Veloren 10"
+guid: "https://veloren.net/blog/devblog-10/"
+url: "https://veloren.net/blog/devblog-10/"
+pubDate: "2019-04-08T00:00:00.000Z"
+---
+
+Lots of UI concepts this week. Also, a big change to the GitLab repo, and the start of a programming manual for Veloren. This week's blog was edited by @AngelOnFira, with the art section curated by the one and only @Pfau!
+
+## Programming
+
+A pretty big change this week involving the GitLab repository. While we've been refactoring the codebase, we've used the name "fresh". Now that we are at a more stable state, it's about time that it was changed. You can see the new repo [here](https://gitlab.com/veloren/veloren). As you may notice, there is only one star on the repo right now. Let's change that! Stars help projects become more visible and more reputable. Also, the old version of Veloren has 82 stars, so it seems much more attractive than this version. If you could add a star it would really help. :)
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/539518074106413056/564907699062571089/unknown.png)
+
+_The new veloren repo :)_
+
+@xMAC94x has been putting in lots of work this week on the networking side of things. He and @Yuri have been working to solve some networking issues. Most of the work was on creating a better log system for the public server. An issue that came up was if a client's ping was too high, they would be kicked from the server.
+
+Finally, there has been ground work on the Veloren programming manual. You can see how it's going [here](https://manual.veloren.net/). This documentation will be automatically generated automatically from the codebase. A lot of work needs to be done to get it to a usable state, but hopefully it will help new developers get on board more easily.
+
+## Art
+
+Lots of art content this week! One thing that's new this week, instead of making SVG files for better scaling we decided to render actual VOX files for the interface elements. This will help with scaling for different computers while keeping the icons looking the same.
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/467073814208053248/563342034245517314/unknown.png)
+
+_Concept of the character window_
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/467073814208053248/563851682564276247/unknown.png)
+
+_How it actually looks like in the game right now. XP-bar, health and mana bar (colors are subject to change!)_
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/481112886308110339/563783087977136128/unknown.png)
+
+_Again, alongside with other windows. The most interesting thing here is the inventory with the locked slots and the scrollbar._
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/467073814208053248/563754012436856858/unknown.png)
+
+_Concept of the mouseover. The text is subject to change and was just for testing purposes._
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/449660795857403905/564508848342171668/unknown.png)
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/449660795857403905/564502406113787924/unknown.png)
+
+_Beardstyle experiments_
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/449660795857403905/563684535460429844/unknown.png)
+
+_Possible look of future item icons_
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/449660795857403905/563693846651994118/unknown.png)
+
+_Empty item slots background art_
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/449660795857403905/564592243265110036/unknown.png)
+
+_Birds by @Demonic_

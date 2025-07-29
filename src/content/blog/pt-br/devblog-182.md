@@ -1,0 +1,47 @@
+---
+title: "This Week In Veloren 182"
+guid: "https://veloren.net/blog/devblog-182/"
+url: "https://veloren.net/blog/devblog-182/"
+pubDate: "2022-07-25T00:00:00.000Z"
+---
+
+This week, we hear about how the 0.13 release party went. We also get a video of a lightning storm.
+
+\- AngelOnFira, TWiV Editor
+
+## Contributor Work
+
+Thanks to this week's contributors, @xMAC94x, @DaforLynx, @JonHeath, and @Pfau!
+
+### 0.13 Release Party by @YuriMomo
+
+This week, [Veloren 0.13 was released](https://veloren.net/release-0-13)! We smashed our previous release party record with 277 players online at peak!
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/557222912394788884/1000704303276761138/unknown.png)
+
+Here's the old record, on the 0.12 release we peaked at 195 players!
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/539518074106413056/948188626502713364/unknown.png)
+
+Check out the trailer to see some of the changes. The release party took the place at 18:00 GMT on July 24th, if you missed the release party you can watch it on our YouTube channel!
+
+Here is the list of the features which were added to Veloren!
+
+- Better Weather system by @DaforLynx (sound) @zesterer @Isse (programming)
+- LoD Objects by @zesterer
+- Balance changes to items and monsters
+- Performance improvements
+- Water caves by @Isse
+- CliffTowns by @floppy
+- Modular weapon @Sam sword overhaul by @Slipped \[GMT -5\]
+- Added loot ownership for drops from mining
+- Updated the Polish translation @LunarEclipse (LunarEclipse)
+- More varied ambient birdcalls @DaforLynx
+- Overhauled caves: they're now a multi-layer network spanning the entire world @zesterer \[GMT+0\]
+- Modular weapons now have a selling price @Christof
+- Metadata added to music files. Listen to the soundtrack more easily @DaforLynx
+- Optimized sprite processing decreasing the startup time of voxygen (and long freezes when trying to enter the world when this hasn't finished). @Imbris
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/634860358623821835/998127222860820530/screenshot_1658042110564.png)
+
+_Taking a rest while exploring the caverns. See you next week!_

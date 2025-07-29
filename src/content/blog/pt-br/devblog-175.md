@@ -1,0 +1,53 @@
+---
+title: "This Week In Veloren 175"
+guid: "https://veloren.net/blog/devblog-175/"
+url: "https://veloren.net/blog/devblog-175/"
+pubDate: "2022-06-06T00:00:00.000Z"
+---
+
+This week, we hear about an issue with memory leaking somewhere in the memory pipeline.
+
+\- AngelOnFira, TWiV Editor
+
+## Contributor Work
+
+Thanks to this week's contributors, @Christof, @imbris, @XVar, @Slipped, and @terrarier2111!
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/450039871650660374/982412916651327518/snap2022-06-03-19-33-23.png)
+
+### Veloren memory leak by @YuriMomo
+
+This week, @YuriMomo found a memory leak in the Veloren.
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/449654102553788417/983801120956751882/unknown.png)
+
+As we can see, Veloren is taking up significantly more RAM than it should. @YuriMomo dove deeper into the problem to diagnose it. They found that something was constantly allocating 32 bytes each frame, which added up over time.
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/449654102553788417/983810471914254417/unknown.png)
+
+Although this memory would be freed just fine after the game closes, it's clearly living for longer than it should. Ideally, it should be cleaned up after each frame. A little more analysis lead to discovering this code:
+
+    ##[no_mangle]
+    pub unsafe extern "C" fn wgpu_render_pass_push_debug_group(
+        pass: &mut RenderPass,
+        label: RawString,
+        color: u32,
+    ) {
+        let bytes = ffi::CStr::from_ptr(label).to_bytes();
+        pass.base.string_data.extend_from_slice(bytes);
+
+        pass.base.commands.push(RenderCommand::PushDebugGroup {
+            color,
+            len: bytes.len(),
+        });
+    }
+
+Which was passing information from Veloren to wgpu, the rendering API that Veloren uses. Some more diagnostics were run, and @imbris mentioned that the problem seemed to be deeper than what we have access to through just the wgpu API.
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/449654102553788417/983824982054408304/unknown.png)
+
+This issue still has not been fully resolved, but more people on the team are looking into parts of it. More to come in the future!
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/634860358623821835/982702411623850074/unknown.png)
+
+_Flying through the valley. See you next week!_

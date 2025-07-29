@@ -1,0 +1,40 @@
+---
+title: "This Week In Veloren 191"
+guid: "https://veloren.net/blog/devblog-191/"
+url: "https://veloren.net/blog/devblog-191/"
+pubDate: "2022-09-26T00:00:00.000Z"
+---
+
+This week, we hear about recent pet feeding improvements.
+
+\- Christof, TWiV Contributor
+
+## Contributor Work
+
+Thanks to this week's code contributors, @xMAC94x, @Welvex, @zesterer, @floppy, @Sharp, @LunarEclipse, @Sam, @Couls, @MadirexRus.
+
+### Pet feeding by @aweinstock
+
+To solve the problem of pets choosing not to pick up food (and having other NPCs take the food), I added trade AI for pets. Pets only accept trade requests with their owner, only accept food, and do not return food that they're given.
+
+In the process of working with pet inventories to ensure that they had the right amount of slots, I also fixed an issue where pets were not supplied their intrinsic weapons and armour when reloaded on login (e.g. tortoises had significantly lower defence after taming them and logging out and in).
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/1022286504657178625/1024067691511824557/2022-09-26-172019_1362x572_scrot.png)
+
+_Trading with your pet_
+
+### 20,000 Members in Discord
+
+On September, 22nd we reached the 20,000 member mark in Discord:
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/597826574095613962/1022507149265473616/unknown.png)
+
+Here are some graphs over time:
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/597826574095613962/1023224927844839555/unknown.png)
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/597826574095613962/1023225394725408898/unknown.png)
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/634860358623821835/1022903021342044170/screenshot_1663949448764.png)
+
+_Enjoying the view. See you next week!_

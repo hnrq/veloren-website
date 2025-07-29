@@ -1,0 +1,46 @@
+---
+title: "Three Weeks in Veloren 205"
+guid: "https://veloren.net/blog/devblog-205/"
+url: "https://veloren.net/blog/devblog-205/"
+pubDate: "2023-02-08T00:00:00.000Z"
+---
+
+These weeks, we see glowing sprite voxels and internship results.
+
+\- Christof, TWiV Contributor
+
+## Contributor Work
+
+Thanks to last three weeks' contributors, @zesterer, @aweinstock, @isse, @joedonofry, @niniko, @tygyh, @walpo, @Corvella, @vasco, @Teffmasterjeff, @poggly, @floppy, @Christof, @capucho, Nicolas Wildner, @MadirexRus, @imbris, @james.
+
+These changes include potion sickness, many translations and fixes, more creatures, moderator badges and chat command suggestion fixes.
+
+The 'weekly' developer meeting minutes are available at [2023-01-22](https://hackmd.io/@veloren/HJbpdeooj), [2023-01-29](https://hackmd.io/@veloren/Bk8HVVE2o) and [2023-02-04](https://hackmd.io/@veloren/ryBsoMnhs).
+
+### Potion shops were created during a two week internship by @nixda
+
+In my two-week internship about game-design, I learned a lot about the different aspects and tasks that come with it. I was always interested in programming and I always wanted to contribute to a game, which now I did. Around 1 month before the Internship started, I started learning the basics of Rust. In my first week, I learned a lot about what comes with game-design, for example economy or how the code of Veloren is structured and where to find things etc… In the second week I build my own random generated "house" using site2.
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/597826574095613962/1069375318562975744/screenshot_1674928647618.png)
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/597826574095613962/1069375319372476496/screenshot_1674928667442.png)
+
+### Glowing sprite voxels finally made it into the game
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/523568428905398283/1072285095408443412/screenshot_1675723063666.png)
+
+### Assorted video and image impressions
+
+Your browser does not support the video tag.
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/634860358623821835/1068474670598332476/veloren-voxygen_KfiHBqQHzU.png)
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/634860358623821835/1067322337634029598/47.png)
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/634860358623821835/1066784954245201991/screenshot_1674354249640.png)
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/523568428905398283/1072284593392205824/screenshot_1675722948731.png)
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/634860358623821835/1068668555538739372/image.png)
+
+_Lightning at the tower. See you next week!_

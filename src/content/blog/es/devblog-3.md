@@ -1,0 +1,55 @@
+---
+title: "This Week In Veloren 3"
+guid: "https://veloren.net/blog/devblog-3/"
+url: "https://veloren.net/blog/devblog-3/"
+pubDate: "2019-02-18T00:00:00.000Z"
+---
+
+This week is the week of netcode. With @LunarEclipse working heavily on it, lots of progress has been made. There is still a little more to do, but this is a crucial part of the refactor.
+
+## Programming
+
+There has been a significant amount of work done to the netcode of the refactor. @LunarEclipse as completed most of the work on it, and it is almost ready to be merged in. If you want to see the WIP, feel free to check it out [here](https://gitlab.com/veloren/fresh/merge_requests/6).
+
+Lots of discussion about the implementation has been had in #programmers, so be sure to check it out if you want more details. Wireshark has been this week's MVP tool for debugging issues :P. Other than a few other features and polish, the netcode is nearly ready! Once this chapter of the engine is done, it will open the floodgates for much more.
+
+@YuriMomo did some benchmarks with the refactored code, and here were the results.
+
+    --------------------------
+    Main Menu
+    average cpu usage ~35%
+    Ram Usage ~100mb
+    Gpu 3D Average usage ~ 40%
+    ----------
+    "Ingame"
+    CPU usage ~ 2%
+    Ram usage ~ 150mb
+    GPU usage ~10%
+    --------------
+    --------------------------
+
+He didn't see anything out of the normal in terms of memory leaks, however, much more extensive tests will be run in the future to get a better idea of the capabilities of the Veloren engine.
+
+## Art
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/449660795857403905/545285444322197505/Moai_deactivated.png)
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/449660795857403905/545289326515453955/Moai_activated.png)
+
+_@Maddin doing some concept art for Moai that pop out of the ground when approached_
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/449660795857403905/542935073054392330/unknown.png)
+
+_@Demonic's concept art for tiny tree creatures_
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/449660795857403905/546340316257583104/Smaragd_Hippo2.png)
+
+_@Maddin's Panthuron. It is still being discussed what the length of the feet should be, and how quadruped animations should work in general._
+
+## Music
+
+@Aeronic took some time to prepare this track for the blog :)
+
+Your browser does not support the audio element.
+
+_Wandering Voices_

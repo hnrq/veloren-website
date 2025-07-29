@@ -1,0 +1,65 @@
+---
+title: "This Week In Veloren 62"
+guid: "https://veloren.net/blog/devblog-62/"
+url: "https://veloren.net/blog/devblog-62/"
+pubDate: "2020-04-06T00:00:00.000Z"
+---
+
+@Carbonhell made it possible to change your key bindings in-game and @Pfau with the help of @Imbris are working on improving the inventory with working armor slots while @Capucho gives us a look into how to make yourself transparent.
+
+\- Songtronix, TWiV Editor
+
+Contributor Work
+----------------
+
+Thanks to this week's contributors, @Imbris, @Pfau, @Songtronix, @Capucho, @AngelOnFira, @Zesterer, @Qutrin, @Shandley, and @yusdacra!
+
+Capucho
+-------
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/541307708146581519/697582876635430992/player-transparent.gif)
+
+Recently, I implemented player transparency. As you can see above, this allows the player to become transparent when you zoom in far enough. When first developing this feature it was more of some toying around. I created a simple shader that would display a dark silhouette when the player was beyond things.
+
+It works by rendering after everything else. It would pass the depth test and then the player was rendered. This way if the player wasn’t occluded by a tree or something, it could render over the player. Otherwise the silhouette would be shown. I posted a screenshot and called it a day.
+
+Next day I go check out the discord and there was a lot of positive responses, so I thought to myself that adding some sort of transparency effect when zooming would be cool, so I disable the shadow effect and modified the player shader to reduce the opacity when zooming in. Then I tried to put everything together but when you zoomed the shadow appeared because the player now was also rendering things that were behind him, so I was searching for something to make it work and found about stencil buffers.
+
+Stencil buffers are like a Depth Buffer but the developer has full control over it, so I made that when the player was rendered the buffer would write a 1 and the shader only rendered if there was a 0 and then I tried to run and it crashed right after startup, it wasn’t supposed to have happened and it took me 2 days to figure it out. The OpenGL spec says that a depth buffer and a stencil buffer can exist separated, but it turns out almost no graphic cards manufacturers implement it so I joined them together and it worked, I shared my work, it was merged and I went to sleep.
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/449650240350453760/697033148348760094/unknown.png)
+
+Next day I get a message, Slipped had turned Jesus, this was caused by the circular dependency in the depth buffer, the player was transparent and the water too but the player was drawn last onto the screen so it seemed like it was hovering over water. It was no easy fix because if you changed the order the player would have x-ray vision on the water when it became transparent.
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/449654102553788417/696219653944508436/unknown.png)
+
+_Slipped had turned Jesus_
+
+To solve this Imbris suggested dithering. Dithering simply discarded pixels on a pattern and there was no circular dependency because there was nothing to be rendered and It also gave a nice transparency effect with some sort of film grain applied on top. A number of small changes were also made, the shadow also got dithered, the position was taken from the player location and not from the fragment which made it more uniform and this was made the final version of the effect.
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/541307708146581519/697579569003364452/player-dither.gif)
+
+Language, Combat and Armor
+--------------------------
+
+Veloren is now available in Italian, Portuguese, Turkish and German!
+
+Thanks to the recent merge of Combat, we now have far better fighting experience than before. Try it out! Another great addition is Armor:
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/597826574095613962/696539899326627880/unknown.png)
+
+_inventory support for Armor will follow shortly but it's already equippable and can be found in chests!_
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/597826574095613962/697178994964955206/unknown.png)
+
+_Are you worthy to wear it?_
+
+In need for some calming tunes? Checkout our [SoundCloud](https://soundcloud.com/velorenofficial) and tune your controls:
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/449650240350453760/696766685180461066/unknown.png)
+
+_How to make a good game: Make Controls adjustable. Thank you @Carbonhell!_
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/597826574095613962/697135378934792302/unknown.png)
+
+_Exclusive cape just for $9999.99. See you next week!_

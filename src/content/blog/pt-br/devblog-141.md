@@ -1,0 +1,40 @@
+---
+title: "This Week In Veloren 141"
+guid: "https://veloren.net/blog/devblog-141/"
+url: "https://veloren.net/blog/devblog-141/"
+pubDate: "2021-10-11T00:00:00.000Z"
+---
+
+This week, we hear about a crafting overhaul and the new salvage functionality that will come with it.
+
+\- AngelOnFira, TWiV Editor
+
+## Contributor Work
+
+Thanks to this week's contributors, @zesterer, @imbris, @juliancoffee, @Sam, @xMAC94x, @IsseW, @JTriantafylos, @Pfau, @antoniomuso, @ubruntu, @devrique, @GLawrence29, @Treeco, and @CapsizeGlimmer!
+
+This week, Veloren hit 10,000 commits! You can read this week's meeting notes [here](https://hackmd.io/eGxCtRT8SliQ_4k75o2ZQA). Several developers are participating in Hacktoberfest contributions to Veloren; make sure to read [our blog post about it](https://veloren.net/hacktoberfest-2021) if you want to also participate!
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/539518074106413056/898916821665738762/unknown.png)
+
+_Number of lines of code at this point_
+
+@ubruntu added loot notifications for groups. When people are in a group, they receive notifications of what other members of the group pick up. People no longer have to ask "What did the boss drop?" or "What was in that chest?". @juliancoffee Fixed strange names for travelers, no more Orcs named Danari.
+
+### Crafting updates by @Sam
+
+I've begun (and almost finished) making some tweaks to how crafting works in the backend. Crafting now works through an enum. For now, there will be two kinds of crafting: `SimpleRecipe` (which works much the same as current crafting), and `Salvage` (which is the dismantle recipe, but better).
+
+For `SimpleRecipe`, rather than only sending over the recipe that the client is trying to craft, it now also sends over a vector of slots that the client wants to use to craft the recipe. In the future, this will aid in allowing a player to specify which item they want to use in a recipe where there are multiple valid inputs. This will be the case for modular weapons, which is one of the main motivations for me to do all this work.
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/523568428905398283/898557257929850890/screenshot_1634275493612.png)
+
+_A potion is being brewed!_
+
+Also, all dismantling recipes have been removed. Instead, they now go through the aforementioned `Salvage`. This works by specifying a slot that the client wishes to salvage, and the server then checks if the item can be salvaged, returning the salvaged items if it could be.
+
+Salvaging will now also be done using a new crafting station, the Salvaging Station. @Pfau has made a model for this. @Snowram has also been working on getting the salvage output to be displayed in the tooltip of an item when you are at the salvaging station.
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/634860358623821835/898627919222546472/screenshot_1634319966789.png)
+
+_Flight coming in at night. See you next week!_

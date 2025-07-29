@@ -1,0 +1,102 @@
+---
+title: "Two Weeks in Veloren 221"
+guid: "https://veloren.net/blog/devblog-221/"
+url: "https://veloren.net/blog/devblog-221/"
+pubDate: "2023-11-18T00:00:00.000Z"
+---
+
+These weeks, we look at community events, plugin progress, Salamander animation and spot to site migration.
+
+\- Christof, TWiV editor
+
+## Contributor Work
+
+Thanks to last two weeks' contributors @floppy, @uniior, @crabman, @Christof, @Sorann753, @zesterer, @Isse, @Sam, @PopeRigby.
+
+The merged work includes fixes to Jungle ruins, a clover leaf glider recipe, buff balancing, kits in plugins, translation updates, ice reflections and mesas, rock circle sites, shader fixes, beam terrain collision fixes, separating combat and behaviour state, buff optimizations, a fire potion, precision 🞋, serde enum-maps, and removing the spin-melee state.
+
+Ongoing (unmerged) work is happening on zone balancing, mage tower, vampire castle, terracotta ruins, a burning pot model, learnable recipes, inventory overflow, rain extinguishing burning, Salamander AI, Torvus, Taverns, antigravity potions, and item merging.
+
+## New web site layout
+
+@Walpo put significant effort into a modernization of the Veloren web site, now licensing became explicit, the blog posts got a new template and linking to streamable videos became more convenient.
+
+Thank you for pushing this through, @Walpo!
+
+## Community events
+
+On November the 3rd @Hrom and @necti organized a Team vs Team death-match on the party island docks.
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/888424036143607809/1170094556797227058/Team_vs_Team_Deathmatch.png)
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/888424036143607809/1170476971759767653/image.png)
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/888424036143607809/1170476972137271386/image.png)
+
+Two weeks later there was an underground chicken fighting
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/888424036143607809/1175899057168842772/image.png)
+
+## WECW plugin content
+
+You can find @EvanMeek's plugin [here on Codeberg](https://codeberg.org/evanmeek/veloren-wecw-plugin). The original WECW, a Veloren fork, can be found [here](https://github.com/EvanMeek/veloren-wecw-assets/).
+
+It adds new axes and hammers,
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/596384200576335873/1171099254861856920/screenshot_1699280548183.png)
+
+… and panda armor
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/596384200576335873/1172589453043310704/Image_1699637495708.jpg)
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/596384200576335873/1172589453416607744/Image_1699637492436.jpg)
+
+and more
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/596384200576335873/1172666308341538886/veloren-migrade-armor.png)
+
+We found that internationalization is needed for plugins as well:
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/596384200576335873/1172669256542998640/veloren-emacs-git-status.png)
+
+Adapting the model offset needs reloading for fast feedback - which isn't yet implemented, and the plugin manifest merging seems to have broken hot-reloading.
+
+## New Salamander attacks
+
+@floppy and @MetalGunTalk are working on new Salamander fire attacks:
+
+Your browser does not support the video tag.
+
+## Spot to site migration
+
+The stone circle became a site (like dungeons and towns), previously it was a spot (low overhead random structure, like pirate ship):
+
+Camps in different environments
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/1176516972415029291/1176517207551909918/Screenshot_from_2023-11-21_14-01-43.png)
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/1176516972415029291/1176517208067805275/Screenshot_from_2023-11-21_14-02-50.png)
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/1176516972415029291/1176517208550166578/Screenshot_from_2023-11-21_14-03-52.png)
+
+And troll caves
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/1176516972415029291/1176517334484144169/Screenshot_from_2023-11-21_14-07-19.png)
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/1176516972415029291/1176517335293640754/Screenshot_from_2023-11-21_14-09-17.png)
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/1176516972415029291/1176517335885025320/Screenshot_from_2023-11-21_14-10-21.png)
+
+## Tethering testing by @zesterer
+
+You can indeed build an airship convoy, I had to modify the `/airship` command to give them a tether:
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/523568428905398283/1173570164365738026/screenshot_1699871294856.png)
+
+But it doesn't always go to plan:
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/523568428905398283/1173574879681982504/screenshot_1699872438880.png)
+
+![](https://s3.eu-central-2.wasabisys.com/veloren-blog/cdn/634860358623821835/1174461771604574310/screenshot_1700083654267.png)
+
+_A skillful love graffiti. See you next time!_
