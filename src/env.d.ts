@@ -1,6 +1,6 @@
 interface ImportMetaEnv {
-  readonly GEMINI_API_KEY: string;
-  readonly VELOREN_RSS_URL: string;
+  readonly VELOREN_ARTICLES_URL: string;
+  readonly PUBLIC_VELOREN_SERVER_URL: string;
 }
 
 interface ImportMeta {

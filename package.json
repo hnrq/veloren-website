@@ -3,20 +3,25 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "dev": "dotenvx run -- astro dev",
+    "build": "paraglide-js compile --project ./project.inlang --outdir ./src/paraglide && dotenvx run -- astro build",
     "preview": "astro preview",
     "fmt": "prettier --write .",
-    "translate-articles": "dotenvx run  -- node scripts/translate.mjs",
-    "gen:gcloud:credentials": "dotenvx run -- node scripts/gen-gcloud-credentials.mjs",
-    "astro": "astro"
+    "astro": "astro",
+    "machine-translate": "inlang machine translate --project project.inlang"
   },
   "dependencies": {
-    "astro": "^5.12.5"
+    "astro": "^5.12.5",
+    "typescript": "^5.9.2"
   },
   "devDependencies": {
+    "@astrojs/node": "^9.3.3",
     "@dotenvx/dotenvx": "^1.48.3",
-    "@google-cloud/translate": "^9.2.0",
+    "@google-cloud/storage": "^7.16.0",
+    "@inlang/cli": "^3.0.0",
+    "@inlang/paraglide-js": "2.2.0",
+    "@types/he": "^1.2.3",
+    "he": "^1.2.0",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
     "rss-parser": "^3.13.0",

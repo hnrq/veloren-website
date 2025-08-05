@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+import RootLayout from "src/layout/RootLayout.astro";
+
+export const getStaticPaths = async () => {
+  const collection = await getCollection("blog");
+  return collection.map((post) => ({
+    params: { slug: post.data.slug, locale: post.data.language },
+    props: { blogpost: post.data },
+  }));
+};
+
+const { locale } = Astro.params;
+const { blogpost } = Astro.props;
+---
+
+<RootLayout locale={locale} title={blogpost.title}>
+  <h1>{blogpost.title}</h1>
+  <small>{new Date(blogpost.date).toLocaleDateString()}</small>
+  <main set:html={blogpost.content} />
+</RootLayout>
+
+<style is:global>
+  main {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .inline-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .inline-image video {
+    max-width: 100%;
+    height: auto;
+  }
+</style>

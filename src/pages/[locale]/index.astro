@@ -1,0 +1,39 @@
+---
+import { setLocale } from "@paraglide/runtime";
+import { m } from "@paraglide/messages.js";
+import { getCollection } from "astro:content";
+import RootLayout from "src/layout/RootLayout.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+export const getStaticPaths = () =>
+  ["es", "pt-br"].map((locale) => ({
+    params: { locale },
+  }));
+
+const { locale } = Astro.params;
+
+setLocale(locale as "es" | "pt-br", { reload: true });
+
+const collection = await getCollection(
+  "blog",
+  ({ data }) => data.language === locale,
+);
+---
+
+<RootLayout title="Veloren SA" locale={locale}>
+  <h1>{m.welcome()}</h1>
+  {
+    collection
+      .sort(
+        (post1, post2) => post2.data.date.getTime() - post1.data.date.getTime(),
+      )
+      .map((post) => (
+        <div>
+          <h2>{post.data.title}</h2>
+          <a href={getRelativeLocaleUrl(locale, `/blog/${post.data.slug}`)}>
+            {m.read_more()}
+          </a>
+        </div>
+      ))
+  }
+</RootLayout>
