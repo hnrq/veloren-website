@@ -9,7 +9,7 @@ const blog = defineCollection({
     const data = await response.json();
 
     return Promise.all(
-      data.items.map(async ({ mediaLink, name }: FileMetadata) => {
+      (data.items ?? []).map(async ({ mediaLink, name }: FileMetadata) => {
         const item = await (await fetch(mediaLink as string)).json();
 
         return {
