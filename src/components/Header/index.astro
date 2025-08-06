@@ -1,0 +1,45 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { Image } from "astro:assets";
+import Logo from "@assets/logo.png";
+
+const unlocalizedPathname = Astro.url.pathname.replace(
+  `${Astro.currentLocale}/`,
+  "",
+);
+---
+
+<nav class="navbar">
+  <a
+    href={getRelativeLocaleUrl(Astro.currentLocale as string, "")}
+    aria-label="Go to homepage"
+  >
+    <Image src={Logo} alt="" height={32} width={32} />
+  </a>
+  <ol class="navbar__i18n-toggle">
+    <li aria-label="Ver em português">
+      <a href={getRelativeLocaleUrl("pt-br", unlocalizedPathname)}>🇧🇷</a>
+    </li>
+    <li aria-label="Ver en español">
+      <a href={getRelativeLocaleUrl("es", unlocalizedPathname)}>🇪🇸</a>
+    </li>
+  </ol>
+</nav>
+
+<style>
+  .navbar {
+    display: flex;
+    padding: 1rem 0;
+    justify-content: space-between;
+  }
+
+  .navbar__i18n-toggle {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+</style>

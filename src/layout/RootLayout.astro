@@ -1,51 +1,23 @@
 ---
+import Header from "@components/Header/index.astro";
+
 import "@fontsource-variable/fira-code";
 import "@fontsource-variable/inter";
 
-const { title, locale } = Astro.props;
+import "@styles";
+
+const { title } = Astro.props;
 ---
 
-<html lang={locale}>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
+<html lang={Astro.currentLocale}>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{title}</title>
+
   <body>
+    <Header />
     <slot />
   </body>
 </html>
-
-<style is:global>
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Fira Code";
-    font-weight: bold;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
-    font-size: 2.25rem;
-  }
-
-  h3 {
-    font-size: 2rem;
-  }
-
-  h4 {
-    font-size: 1.5rem;
-  }
-
-  * {
-    font-family: "Inter Variable";
-  }
-</style>

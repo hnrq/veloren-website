@@ -1,6 +1,5 @@
 ---
-import { setLocale } from "@paraglide/runtime";
-import { m } from "@paraglide/messages.js";
+import { m } from "@paraglide/messages";
 import { getCollection } from "astro:content";
 import RootLayout from "src/layout/RootLayout.astro";
 import BlogpostItem from "@components/BlogpostItem/index.astro";
@@ -12,8 +11,6 @@ export const getStaticPaths = () =>
 
 const { locale } = Astro.params;
 
-setLocale(locale as "es" | "pt-br", { reload: true });
-
 const collection = await getCollection(
   "blog",
   ({ data }) => data.language === locale,
@@ -21,12 +18,22 @@ const collection = await getCollection(
 ---
 
 <RootLayout title="Veloren SA" locale={locale}>
-  <h1>{m.welcome()}</h1>
-  {
-    collection
-      .sort(
-        (post1, post2) => post2.data.date.getTime() - post1.data.date.getTime(),
-      )
-      .map((post) => <BlogpostItem post={post.data} />)
-  }
+  <main class="blogposts">
+    {
+      collection
+        .sort(
+          (post1, post2) =>
+            post2.data.date.getTime() - post1.data.date.getTime(),
+        )
+        .map((post) => <BlogpostItem post={post.data} />)
+    }
+  </main>
 </RootLayout>
+
+<style>
+  .blogposts {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+</style>

@@ -10,7 +10,9 @@
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@paraglide/*": ["src/paraglide/*"]
+      "@paraglide/*": ["src/paraglide/*"],
+      "@styles/*": ["src/styles/*"],
+      "@styles": ["src/styles/index.css"]
     }
   }
 }
