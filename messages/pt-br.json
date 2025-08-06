@@ -1,5 +1,6 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
   "welcome": "Bem-vindo ao Veloren América do Sul",
-  "read_more": "Ler mais"
+  "read_more": "Ler mais",
+  "disclaimer": "Este website não está afiliado ao projeto Veloren"
 }

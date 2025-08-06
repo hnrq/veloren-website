@@ -17,6 +17,8 @@
   "devDependencies": {
     "@astrojs/node": "^9.3.3",
     "@dotenvx/dotenvx": "^1.48.3",
+    "@fontsource-variable/fira-code": "^5.2.6",
+    "@fontsource-variable/inter": "^5.2.6",
     "@google-cloud/storage": "^7.16.0",
     "@inlang/cli": "^3.0.0",
     "@inlang/paraglide-js": "2.2.0",

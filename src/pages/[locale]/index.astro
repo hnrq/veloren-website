@@ -29,9 +29,8 @@ const collection = await getCollection(
       )
       .map((post) => (
         <div>
-          <h2>{post.data.title}</h2>
           <a href={getRelativeLocaleUrl(locale, `/blog/${post.data.slug}`)}>
-            {m.read_more()}
+            <h3>{post.data.title}</h3>
           </a>
         </div>
       ))

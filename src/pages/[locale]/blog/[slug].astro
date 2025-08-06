@@ -16,6 +16,7 @@ const { blogpost } = Astro.props;
 
 <RootLayout locale={locale} title={blogpost.title}>
   <h1>{blogpost.title}</h1>
+  <small><a href={blogpost.source_url}>Post original</a></small>
   <small>{new Date(blogpost.date).toLocaleDateString()}</small>
   <main set:html={blogpost.content} />
 </RootLayout>
