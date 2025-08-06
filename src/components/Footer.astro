@@ -1,0 +1,21 @@
+---
+import { m } from "@paraglide/messages";
+---
+
+<footer>
+  <p>
+    {m.credits({ adjective: "🔥" })}
+    <a href="https://github.com/hnrq/veloren-website">hnrq</a>
+  </p>
+  <p>{m.disclaimer()}</p>
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    padding: 4rem 2rem;
+    justify-content: space-between;
+    font-size: small;
+    opacity: 0.8;
+  }
+</style>

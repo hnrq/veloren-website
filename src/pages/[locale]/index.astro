@@ -2,7 +2,7 @@
 import { m } from "@paraglide/messages";
 import { getCollection } from "astro:content";
 import RootLayout from "src/layout/RootLayout.astro";
-import BlogpostItem from "@components/BlogpostItem/index.astro";
+import BlogpostItem from "@components/BlogpostItem.astro";
 
 export const getStaticPaths = () =>
   ["es", "pt-br"].map((locale) => ({
@@ -35,5 +35,6 @@ const collection = await getCollection(
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    padding-bottom: 4rem;
   }
 </style>

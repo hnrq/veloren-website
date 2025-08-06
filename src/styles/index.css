@@ -1,14 +1,7 @@
 :root {
   --color-primary: #a259ff;
-  --text-color: #222;
+  --text-color: #000;
   --background-color: #fff;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text-color: #fff;
-    --background-color: black;
-  }
 }
 
 h1,
@@ -24,7 +17,6 @@ h6 {
 h1 {
   font-size: 2.5rem;
   text-shadow: var(--color-primary) -4px 4px;
-  color: var(--background-color);
 }
 
 h2 {
@@ -49,6 +41,19 @@ h4 {
 body {
   max-width: 1200px;
   margin: auto;
+  padding: 0 2rem;
+}
+
+html.dark {
+  color: var(--background-color);
+  background-color: var(--text-color);
+}
+
+html.dark a {
+  color: aquamarine;
+}
+
+html {
   color: var(--text-color);
   background-color: var(--background-color);
 }

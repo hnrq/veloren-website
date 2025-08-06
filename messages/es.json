@@ -2,5 +2,6 @@
   "$schema": "https://inlang.com/schema/inlang-message-format",
   "welcome": "Bienvenido a Veloren América del Sur",
   "read_more": "Leer más",
-  "disclaimer": "Este sitio web no está afiliado al proyecto Veloren"
+  "disclaimer": "Este sitio web no es afiliado al proyecto Veloren",
+  "credits": "Hecho con {adjective} por"
 }

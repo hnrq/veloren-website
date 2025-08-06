@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
-import { m } from "@paraglide/messages";
 
 interface Props {
   post: CollectionEntry<"blog">["data"];
@@ -46,7 +45,7 @@ const postLink = getRelativeLocaleUrl(
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: initial;
+    color: inherit;
     transition: transform var(--transition);
   }
 

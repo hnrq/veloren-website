@@ -2,6 +2,7 @@
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { Image } from "astro:assets";
 import Logo from "@assets/logo.png";
+import ThemeIcon from "./ThemeIcon.astro";
 
 const unlocalizedPathname = Astro.url.pathname.replace(
   `${Astro.currentLocale}/`,
@@ -16,6 +17,7 @@ const unlocalizedPathname = Astro.url.pathname.replace(
   >
     <Image src={Logo} alt="" height={32} width={32} />
   </a>
+
   <ol class="navbar__i18n-toggle">
     <li aria-label="Ver em português">
       <a href={getRelativeLocaleUrl("pt-br", unlocalizedPathname)}>🇧🇷</a>
@@ -24,12 +26,14 @@ const unlocalizedPathname = Astro.url.pathname.replace(
       <a href={getRelativeLocaleUrl("es", unlocalizedPathname)}>🇪🇸</a>
     </li>
   </ol>
+  <ThemeIcon />
 </nav>
 
 <style>
   .navbar {
     display: flex;
     padding: 1rem 0;
+    gap: 1.5rem;
     justify-content: space-between;
   }
 
@@ -41,5 +45,9 @@ const unlocalizedPathname = Astro.url.pathname.replace(
 
   a {
     text-decoration: none;
+  }
+
+  ol {
+    margin-left: auto;
   }
 </style>

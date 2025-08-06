@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import RootLayout from "src/layout/RootLayout.astro";
+import "highlight.js/styles/default.min.css";
 
 export const getStaticPaths = async () => {
   const collection = await getCollection("blog");
@@ -15,10 +16,12 @@ const { blogpost } = Astro.props;
 ---
 
 <RootLayout locale={locale} title={blogpost.title}>
-  <h1>{blogpost.title}</h1>
-  <small><a href={blogpost.source_url}>Post original</a></small>
-  <small>{new Date(blogpost.date).toLocaleDateString()}</small>
-  <main set:html={blogpost.content} />
+  <main class="blogpost">
+    <h1>{blogpost.title}</h1>
+    <small><a href={blogpost.source_url}>Post original</a></small>
+    <small>{new Date(blogpost.date).toLocaleDateString()}</small>
+    <section set:html={blogpost.content} />
+  </main>
 </RootLayout>
 
 <style is:global>
@@ -27,8 +30,30 @@ const { blogpost } = Astro.props;
     height: auto;
   }
 
+  .inline-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .inline-image video {
     max-width: 100%;
-    height: auto;
+    max-height: 500px;
+    margin: auto;
+  }
+
+  .blogpost li {
+    margin: 1rem;
+  }
+
+  pre {
+    padding: 2rem;
+    overflow: auto;
+  }
+
+  pre code span {
+    font-family: "Fira Code";
+    display: block;
   }
 </style>
