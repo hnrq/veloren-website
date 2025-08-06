@@ -3,7 +3,7 @@ import { setLocale } from "@paraglide/runtime";
 import { m } from "@paraglide/messages.js";
 import { getCollection } from "astro:content";
 import RootLayout from "src/layout/RootLayout.astro";
-import { getRelativeLocaleUrl } from "astro:i18n";
+import BlogpostItem from "@components/BlogpostItem/index.astro";
 
 export const getStaticPaths = () =>
   ["es", "pt-br"].map((locale) => ({
@@ -27,12 +27,6 @@ const collection = await getCollection(
       .sort(
         (post1, post2) => post2.data.date.getTime() - post1.data.date.getTime(),
       )
-      .map((post) => (
-        <div>
-          <a href={getRelativeLocaleUrl(locale, `/blog/${post.data.slug}`)}>
-            <h3>{post.data.title}</h3>
-          </a>
-        </div>
-      ))
+      .map((post) => <BlogpostItem post={post.data} />)
   }
 </RootLayout>

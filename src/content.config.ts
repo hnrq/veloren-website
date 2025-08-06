@@ -15,6 +15,8 @@ const blog = defineCollection({
         return {
           id: name,
           ...item,
+          cover: item.cover,
+          summary: item.content.replace(/<[^>]*>/g, "").slice(0, 250),
           content: he.encode(item.content, { allowUnsafeSymbols: true }),
           language: name?.split("/")[0].toLowerCase(),
         };
@@ -27,6 +29,8 @@ const blog = defineCollection({
     content: z.string(),
     date: z.string().transform((date) => new Date(date)),
     source_url: z.string().optional(),
+    cover: z.string().url().optional(),
+    summary: z.string().optional(),
     language: z.enum(["es", "pt-br"]),
   }),
 });

@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { m } from "@paraglide/messages.js";
+
+const { post }: { post: CollectionEntry<"blog">["data"] } = Astro.props;
+
+const postLink = getRelativeLocaleUrl(
+  Astro.currentLocale as string,
+  `/blog/${post.slug}`,
+);
+---
+
+<div class="blogpost-item">
+  {
+    post.cover && (
+      <Image
+        alt=""
+        src={post.cover}
+        layout="constrained"
+        fit="cover"
+        height={220}
+        width={350}
+      />
+    )
+  }
+  <div class="blogpost-item__content">
+    <h3 class="blogpost-item__title">
+      <a href={postLink}> {post.title}</a>
+    </h3>
+    {post.summary && <p>{post.summary}...</p>}
+    <a href={postLink}>{m.read_more()}</a>
+  </div>
+</div>
+
+<style>
+  .blogpost-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .blogpost-item__title {
+    margin: 0;
+  }
+
+  .blogpost-item__title a {
+    color: black;
+    text-decoration: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    .blogpost-item {
+      flex-direction: row;
+    }
+  }
+</style>
