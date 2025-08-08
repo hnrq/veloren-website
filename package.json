@@ -11,7 +11,9 @@
     "machine-translate": "inlang machine translate --project project.inlang"
   },
   "dependencies": {
+    "@netlify/functions": "^4.2.1",
     "astro": "^5.12.5",
+    "dgram": "^1.0.1",
     "highlight.js": "^11.11.1",
     "sharp": "^0.34.3",
     "typescript": "^5.9.2"

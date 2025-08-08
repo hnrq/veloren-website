@@ -10,6 +10,15 @@ const unlocalizedPathname = Astro.url.pathname.replace(
 );
 ---
 
+<script>
+  import { actions } from "astro:actions";
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    const { data } = await actions.getServerStatus();
+    console.log(data);
+  });
+</script>
+
 <nav class="navbar">
   <a
     href={getRelativeLocaleUrl(Astro.currentLocale as string, "")}

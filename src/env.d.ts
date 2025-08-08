@@ -1,6 +1,7 @@
 interface ImportMetaEnv {
   readonly VELOREN_ARTICLES_URL: string;
-  readonly PUBLIC_VELOREN_SERVER_URL: string;
+  readonly VELOREN_SERVER_HOST: string;
+  readonly VELOREN_SERVER_PORT: number;
 }
 
 interface ImportMeta {
