@@ -8,12 +8,17 @@
 
     return data;
   };
+
+  let { onlineLabel }: { onlineLabel: string } = $props();
 </script>
 
 {#await fetchServerStatus()}
   <small class="server-status server-status--loading">Loading...</small>
 {:then status}
-  <small class="server-status">🟢 {status}</small>
+  <small class="server-status">
+    🟢 {status.players_count}/{status.player_cap}
+    {onlineLabel}
+  </small>
 {:catch}
   <small class="server-status">🔴 Could not communicate</small>
 {/await}

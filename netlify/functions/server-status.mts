@@ -7,7 +7,6 @@ import {
   battleMode,
   requestType,
 } from "src/types/server-status";
-import { type Context } from "@netlify/functions";
 
 const MAX_REQUEST_RETRIES = 3;
 const MAX_RESPONSE_SIZE = 256;
