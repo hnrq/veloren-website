@@ -1,32 +1,18 @@
 import * as dgram from "dgram";
-import type { Context } from "@netlify/functions";
+import {
+  type ServerInfo,
+  type InitData,
+  type UdpRequest,
+  response,
+  battleMode,
+  requestType,
+} from "src/types/server-status";
+import { type Context } from "@netlify/functions";
 
 const MAX_REQUEST_RETRIES = 3;
 const MAX_RESPONSE_SIZE = 256;
 const VELOREN_HEADER = Buffer.from("veloren");
 const VERSION = 0;
-
-const battleMode = { 1: "pvp", 2: "pve", 3: "per-player" };
-
-const requestType = { init: 1, serverInfo: 2 };
-
-const response = { response: 1, init: 2 };
-
-interface UdpRequest {
-  p: bigint;
-  request: (typeof requestType)[keyof typeof requestType];
-}
-
-interface ServerInfo {
-  players_count: number;
-  player_cap: number;
-  battlemode: (typeof battleMode)[keyof typeof battleMode];
-}
-
-interface InitData {
-  p: bigint;
-  max_supported_version: number;
-}
 
 type DeserializedResponse =
   | { type: "Response"; data: ServerInfo }
@@ -164,7 +150,7 @@ const fetchServerInfo = (address: string, port: number) =>
 const error = (message: string, status: number = 500) =>
   new Response(JSON.stringify({ message }), { status });
 
-const handler = async () => {
+const handler = async (request: Request) => {
   const address = process.env.VELOREN_SERVER_HOST;
   const port = process.env.VELOREN_SERVER_PORT;
 
@@ -172,7 +158,16 @@ const handler = async () => {
 
   try {
     const result = await fetchServerInfo(address, Number(port));
-    return new Response(JSON.stringify(result));
+    return new Response(JSON.stringify(result), {
+      headers: {
+        "Access-Control-Allow-Origin":
+          request.headers.get("Origin") === "http://localhost:4321"
+            ? "http://localhost:4321"
+            : (process.env.URL as string),
+        "Access-Control-Allow-Methods": "GET",
+        Vary: "Origin",
+      },
+    });
   } catch (e) {
     return new Response(JSON.stringify({ message: e }), { status: 500 });
   }

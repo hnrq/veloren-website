@@ -3,6 +3,9 @@ import { defineConfig } from "astro/config";
 import { paraglideVitePlugin } from "@inlang/paraglide-js";
 
 
+import svelte from "@astrojs/svelte";
+
+
 // https://astro.build/config
 export default defineConfig({
   i18n: {
@@ -20,4 +23,6 @@ export default defineConfig({
       }),
     ],
   },
+
+  integrations: [svelte()],
 });

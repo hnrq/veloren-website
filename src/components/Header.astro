@@ -3,21 +3,13 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 import { Image } from "astro:assets";
 import Logo from "@assets/logo.png";
 import ThemeIcon from "./ThemeIcon.astro";
+import ServerStatus from "@components/ServerStatus.svelte";
 
 const unlocalizedPathname = Astro.url.pathname.replace(
   `${Astro.currentLocale}/`,
   "",
 );
 ---
-
-<script>
-  import { actions } from "astro:actions";
-
-  document.addEventListener("DOMContentLoaded", async () => {
-    const { data } = await actions.getServerStatus();
-    console.log(data);
-  });
-</script>
 
 <nav class="navbar">
   <a
@@ -26,6 +18,7 @@ const unlocalizedPathname = Astro.url.pathname.replace(
   >
     <Image src={Logo} alt="" height={32} width={32} />
   </a>
+  <ServerStatus client:only />
 
   <ol class="navbar__i18n-toggle">
     <li aria-label="Ver em português">
