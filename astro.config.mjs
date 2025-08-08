@@ -6,6 +6,9 @@ import { paraglideVitePlugin } from "@inlang/paraglide-js";
 import svelte from "@astrojs/svelte";
 
 
+import sitemap from "@astrojs/sitemap";
+
+
 // https://astro.build/config
 export default defineConfig({
   i18n: {
@@ -24,5 +27,6 @@ export default defineConfig({
     ],
   },
 
-  integrations: [svelte()],
+  site: 'https://veloren.net.br',
+  integrations: [svelte(), sitemap()],
 });
