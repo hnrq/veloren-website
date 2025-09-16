@@ -25,7 +25,7 @@ const collection = await getCollection(
           (post1, post2) =>
             post2.data.date.getTime() - post1.data.date.getTime(),
         )
-        .map((post) => <BlogpostItem post={post.data} />)
+        .map((blogpost) => <BlogpostItem blogpost={blogpost.data} />)
     }
   </main>
 </RootLayout>

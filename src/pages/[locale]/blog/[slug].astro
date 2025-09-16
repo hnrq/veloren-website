@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import RootLayout from "src/layout/RootLayout.astro";
+import { Image } from "astro:assets";
 import "highlight.js/styles/default.min.css";
 
 export const getStaticPaths = async () => {
@@ -17,9 +18,25 @@ const { blogpost } = Astro.props;
 
 <RootLayout locale={locale} title={blogpost.title}>
   <main class="blogpost">
+    <small
+      >{new Date(blogpost.date).toLocaleDateString()}
+      <a href={blogpost.source_url}>Post original</a></small
+    >
     <h1>{blogpost.title}</h1>
-    <small><a href={blogpost.source_url}>Post original</a></small>
-    <small>{new Date(blogpost.date).toLocaleDateString()}</small>
+    {
+      blogpost.cover && (
+        <Image
+          alt=""
+          class="blogpost__cover"
+          src={blogpost.cover}
+          transition:name={`cover-hero-${blogpost.slug}`}
+          layout="constrained"
+          fit="cover"
+          height={880}
+          width={1400}
+        />
+      )
+    }
     <section set:html={blogpost.content} />
   </main>
 </RootLayout>
@@ -39,8 +56,18 @@ const { blogpost } = Astro.props;
 
   .inline-image video {
     max-width: 100%;
-    max-height: 500px;
     margin: auto;
+  }
+
+  .blogpost {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blogpost__cover {
+    margin-top: 2rem;
+    max-width: 100%;
+    height: auto;
   }
 
   .blogpost li {
@@ -55,5 +82,9 @@ const { blogpost } = Astro.props;
   pre code span {
     font-family: "Fira Code";
     display: block;
+  }
+
+  h1 {
+    margin: 0;
   }
 </style>

@@ -4,23 +4,24 @@ import type { CollectionEntry } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
 interface Props {
-  post: CollectionEntry<"blog">["data"];
+  blogpost: CollectionEntry<"blog">["data"];
 }
 
-const { post } = Astro.props;
+const { blogpost } = Astro.props;
 
 const postLink = getRelativeLocaleUrl(
   Astro.currentLocale as string,
-  `/blog/${post.slug}`,
+  `/blog/${blogpost.slug}`,
 );
 ---
 
 <a class="blogpost-item" href={postLink}>
   {
-    post.cover && (
+    blogpost.cover && (
       <Image
         alt=""
-        src={post.cover}
+        src={blogpost.cover}
+        transition:name={`cover-hero-${blogpost.slug}`}
         layout="constrained"
         fit="cover"
         height={220}
@@ -30,9 +31,9 @@ const postLink = getRelativeLocaleUrl(
   }
   <div class="blogpost-item__content">
     <h3 class="blogpost-item__title">
-      {post.title}
+      {blogpost.title}
     </h3>
-    {post.summary && <p>{post.summary}...</p>}
+    {blogpost.summary && <p>{blogpost.summary}...</p>}
   </div>
 </a>
 
