@@ -44,16 +44,17 @@ body {
   padding: 0 1rem;
 }
 
-html.dark {
+body.dark {
   color: var(--background-color);
   background-color: var(--text-color);
 }
 
-html.dark a {
+body.dark a {
+  color-scheme: dark;
   color: aquamarine;
 }
 
-html {
+body {
   color: var(--text-color);
   background-color: var(--background-color);
 }

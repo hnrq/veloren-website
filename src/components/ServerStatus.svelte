@@ -3,10 +3,7 @@
 
   const fetchServerStatus = async (): Promise<ServerInfo> => {
     const response = await fetch(import.meta.env.PUBLIC_SERVER_STATUS_URL);
-    const data = await response.json();
-    console.log(data);
-
-    return data;
+    return response.json();
   };
 
   let { onlineLabel }: { onlineLabel: string } = $props();
