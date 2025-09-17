@@ -15,6 +15,7 @@
     "@astrojs/svelte": "^7.1.0",
     "@netlify/functions": "^4.2.1",
     "astro": "^5.12.5",
+    "astro-loading-indicator": "^0.7.0",
     "dgram": "^1.0.1",
     "highlight.js": "^11.11.1",
     "sharp": "^0.34.3",

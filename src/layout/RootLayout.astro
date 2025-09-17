@@ -3,6 +3,8 @@ import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import { m } from "@paraglide/messages";
 import { ClientRouter } from "astro:transitions";
+import LoadingIndicator from "astro-loading-indicator/component"
+
 
 import "@fontsource-variable/fira-code";
 import "@fontsource-variable/inter";
@@ -39,6 +41,7 @@ const { title } = Astro.props;
 
     <slot name="head" />
     <ClientRouter />
+    <LoadingIndicator color="var(--color-primary)" />
   </head>
 
   <body>
