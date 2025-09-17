@@ -18,11 +18,11 @@ const { blogpost } = Astro.props;
 
 <RootLayout locale={locale} title={blogpost.title}>
   <main class="blogpost">
-    <small
-      >{new Date(blogpost.date).toLocaleDateString()}
-      <a href={blogpost.source_url}>Post original</a></small
-    >
     <h1>{blogpost.title}</h1>
+    <i><small>
+      {new Date(blogpost.date).toLocaleDateString()}
+      <a href={blogpost.source_url}>Post original</a>
+    </small></i>
     {
       blogpost.cover && (
         <Image
